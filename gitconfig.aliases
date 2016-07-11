@@ -1,0 +1,4 @@
+[alias]
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+  count="!git rev-list master.. --count"
+  rias="!git rev-list master.. --count | xargs -L1 -I '$' git rebase -i --autosquash HEAD~$"
