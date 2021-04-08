@@ -62,3 +62,9 @@ https://www.mozilla.org/en-GB/firefox/developer/
 ## BitWarden
 
 https://bitwarden.com/download/
+
+## VSCode
+
+```
+brew install --cask visual-studio-code
+```
