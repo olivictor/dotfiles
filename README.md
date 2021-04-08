@@ -55,6 +55,29 @@ alias rubocopall='git diff origin/master...HEAD --name-only | xargs bundle exec 
 rias = rebase -i --autosquash origin/master
 ```
 
+```
+git config --global user.name "Victor Oliveira"
+git config --global user.email "your_email@gmail.com"
+ssh-keygen -t ed25519 -C "your_email@gmail.com"
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+~/.ssh/config
+``` 
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+ 
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+```
+ssh -T git@github.com
+```
+
 ## Firefox Developer Edition
 
 https://www.mozilla.org/en-GB/firefox/developer/
