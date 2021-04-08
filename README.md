@@ -91,3 +91,10 @@ https://bitwarden.com/download/
 ```
 brew install --cask visual-studio-code
 ```
+
+## Node
+
+```
+brew instal node
+npm install -g yarn
+```
