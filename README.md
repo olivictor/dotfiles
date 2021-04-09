@@ -8,6 +8,8 @@ I'm trying to script those as possible.
 - Increase mouse speed to 80%
 - Tap to click
 - Bottom right corner for secondary click
+- Hot corner for screensaver
+- Lock after 5 seconds of screensaver
 
 ## Clone Dotfiles
 
@@ -91,6 +93,11 @@ https://bitwarden.com/download/
 ```
 brew install --cask visual-studio-code
 ```
+Extensions:
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
 ## Node
 
