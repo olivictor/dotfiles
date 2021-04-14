@@ -1,0 +1,57 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.rulers": [90],
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingBrackets": "never",
+  "breadcrumbs.enabled": true,
+  "html.autoClosingTags": false,
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "explorer.confirmDelete": false,
+  "gitlens.currentLine.enabled": false,
+  "eslint.run": "onSave",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "diffEditor.renderSideBySide": false,
+  "rewrap.wrappingColumn": 90,
+  "rewrap.reformat": true,
+  "fixJson.indentationSpaces": 2,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true
+  },
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "vim.overrideCopy": false,
+  "search.exclude": {
+    "**/*.code-search": false,
+    "**/node_modules": false
+  },
+  "workbench.editor.labelFormat": "short",
+  "extensions.ignoreRecommendations": false,
+  "editor.formatOnSave": true,
+  "vim.commandLineModeKeyBindings": [],
+  "window.zoomLevel": 1
+}
+
