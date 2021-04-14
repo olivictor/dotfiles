@@ -42,7 +42,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ```
 autoload -U promptinit; promptinit
-prompt pure
 ZSH_THEME="refined"
 alias be='bundle exec'
 alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
@@ -51,14 +50,8 @@ alias rubocopall='git diff origin/master...HEAD --name-only | xargs bundle exec 
 
 ## Git
 
-~/.gitconfig
-
 ```
-rias = rebase -i --autosquash origin/master
-```
-
-```
-git config --global user.name "Victor Oliveira"
+cp ./gitconfig ~/.gitconfig
 git config --global user.email "your_email@gmail.com"
 ssh-keygen -t ed25519 -C "your_email@gmail.com"
 pbcopy < ~/.ssh/id_ed25519.pub
@@ -80,6 +73,32 @@ Host *
 ssh -T git@github.com
 ```
 
+## Node
+
+```
+brew instal node
+npm install -g yarn
+```
+
+## VSCode
+
+```
+brew install --cask visual-studio-code
+cp ./vscode-settings.json ~/Library/Application Support/Code/User/settings.json
+```
+
+Extensions:
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+
+## Google Chrome
+
+```
+brew install --cask google-chrome
+```
+
 ## Firefox Developer Edition
 
 https://www.mozilla.org/en-GB/firefox/developer/
@@ -88,20 +107,8 @@ https://www.mozilla.org/en-GB/firefox/developer/
 
 https://bitwarden.com/download/
 
-## VSCode
+## Spotify
 
 ```
-brew install --cask visual-studio-code
-```
-Extensions:
-- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-
-## Node
-
-```
-brew instal node
-npm install -g yarn
+brew install --cask spotify
 ```
