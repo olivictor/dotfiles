@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+      "vscodevim.vim",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "johnpapa.vscode-peacock",
+      "firsttris.vscode-jest-runner",
+      "github.copilot"
+    ]
+  }

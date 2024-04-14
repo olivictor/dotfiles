@@ -1,36 +1,107 @@
-# Macbook setup
+# Dotfiles
 
-Stuff I set up everytime I change laptops.
-I'm trying to script those as possible.
+Stuff I set up everytime I change Macbooks.
 
-## Settings
+## Steps
 
-- Increase mouse speed to 80%
-- Tap to click
-- Bottom right corner for secondary click
-- Hot corner for screensaver
-- Lock after 5 seconds of screensaver
+1. Install Firefox Developer Edition
 
-## Clone Dotfiles
+2. Install Bitwarden extension and login
+
+3. Sign in to Firefox
+
+4. Clone dotfiles
+    ```
+    git clone git@github.com:olivictor/dotfiles.git
+    ```
+
+## Manual setup
+
+These are not as easy to automate, so let's do them manually
+
+- Settings > Keyboard > Modifier Keys: Caps Lock → Esc 
+- Settings > Keyboard > Modifier Keys: Globe → Caps Lock
+- Settings > Keyboard > Input Sources: ⌥ + command + Space to select next source
+- Settings > Keyboard > Text input: US International - PC & US 
+
+## Set defaults
+
+https://macos-defaults.com/
+
+```bash
+# Increase trackpad/mouse speed to max available via settings
+defaults write -g com.apple.mouse.scaling 5.0
+
+# Trackpad: tap to click
+defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 1
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Show the ~/Library folder.
+chflags nohidden ~/Library
+
+# Use top-left corner to start the screen saver
+defaults write com.apple.dock "wvous-tl-corner" -int 5
+defaults write com.apple.dock "wvous-tl-modifier" -int 0
+
+# Lock after 3 seconds of screensaver
+defaults -currentHost write com.apple.screensaver askForPasswordDelay -int 3
+
+# Move Dock to the left
+defaults write com.apple.dock "orientation" -string "left"
+
+# Auto-hide Dock quickly
+defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.dock "autohide-time-modifier" -float "0.3"
+
+# Do not keep recent apps in the Dock
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# Adjust icon size
+defaults write com.apple.dock tilesize -int 42
+
+# Clear all Dock apps
+defaults write com.apple.dock persistent-apps -array
+
+# Display the Bluetooth menu on the top nav
+defaults -currentHost write com.apple.controlcenter.plist Bluetooth -int 18
+
+# Disable two-finger swipe to navigate back and forth
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+defaults write org.mozilla.Firefox AppleEnableSwipeNavigateWithScrolls -bool FALSE
+sudo defaults write com.apple.Safari AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
 ```
-git clone git@github.com:olivictor/dotfiles.git
-```
 
-## Homebrew
+## Homebrew Apps
 
-```
+```bash
+# Installs homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew update
+
+brew install --cask visual-studio-code
+brew install --cask google-chrome
+brew install --cask spotify
+brew install --cask raycast
+brew install --cask warp
+brew install --cask zed
+
 ```
 
-## iTerm2
+## Programming languages
 
-```
-brew install --cask iterm2
-```
+```bash
+# ASDF tool version manager
+brew install asdf
 
-- Copy [preferences](./iterm2_preferences) to `Library/Application Support/iTerm2/DynamicProfiles`
+asdf plugin add ruby && asdf install ruby latest
+asdf plugin add python && asdf install python latest
+asdf plugin add nodejs && asdf install nodejs latest
+
+# it's not recommended to use ASDF for Rust
+brew install rustup
+```
 
 ## Oh My Zsh
 
@@ -73,42 +144,10 @@ Host *
 ssh -T git@github.com
 ```
 
-## Node
-
-```
-brew instal node
-npm install -g yarn
-```
-
 ## VSCode
 
-```
-brew install --cask visual-studio-code
-cp ./vscode-settings.json ~/Library/Application Support/Code/User/settings.json
-```
-
-Extensions:
-- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-
-## Google Chrome
-
-```
-brew install --cask google-chrome
-```
-
-## Firefox Developer Edition
-
-https://www.mozilla.org/en-GB/firefox/developer/
-
-## BitWarden
-
-https://bitwarden.com/download/
-
-## Spotify
-
-```
-brew install --cask spotify
-```
+1. Navigate & open this project in VSCode
+    ```
+    open . -a "Visual Studio Code"
+    ```
+2. Install recommended extensions
